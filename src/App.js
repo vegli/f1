@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/layout/Navbar.js';
 import Footer from './components/layout/Footer.js';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Routes} from 'react-router-dom';
 import Home from './components/pages/Home';
 import News from './components/pages/News';
 import Details from './components/pages/Details';
@@ -16,12 +16,12 @@ class App extends Component{
     return (
       <div>
         <Navbar />
-        <Switch>
+        <Routes>
           <Route exact path="/" component={Home}/>
           <Route path="/news" component={News}/>
           <Route path="/details" component={Details}/>
           <Route component={NotFoundPage}/>
-        </Switch>
+        </Routes>
         <Footer />
       </div>
     );
